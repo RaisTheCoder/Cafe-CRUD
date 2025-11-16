@@ -21,6 +21,8 @@ public class Inventory {
 
     private Integer quantity;
 
+    private String unit;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "branch_id")
     private Branch branch;
