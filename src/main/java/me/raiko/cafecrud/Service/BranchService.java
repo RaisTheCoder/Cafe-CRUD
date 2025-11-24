@@ -1,11 +1,13 @@
 package me.raiko.cafecrud.Service;
 
-import me.raiko.cafecrud.Model.Branch;
-import me.raiko.cafecrud.Repository.BranchRepository;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Service;
+
+import me.raiko.cafecrud.Model.Branch;
+import me.raiko.cafecrud.Repository.BranchRepository;
 
 @Service
 public class BranchService {
@@ -20,15 +22,15 @@ public class BranchService {
         return branchRepository.findAll();
     }
 
-    public Optional<Branch> findById(Long id) {
+    public Optional<Branch> findById(@NonNull Long id) {
         return branchRepository.findById(id);
     }
 
-    public Branch save(Branch branch) {
+    public Branch save(@NonNull Branch branch) {
         return branchRepository.save(branch);
     }
 
-    public void deleteBranch(Branch branch) {
+    public void deleteBranch(@NonNull Branch branch) {
         branchRepository.delete(branch);
     }
 }

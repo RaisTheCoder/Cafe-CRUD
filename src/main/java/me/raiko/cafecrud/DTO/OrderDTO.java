@@ -1,6 +1,5 @@
 package me.raiko.cafecrud.DTO;
 
-import jakarta.validation.constraints.DecimalMax;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

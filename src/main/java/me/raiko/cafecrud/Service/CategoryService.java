@@ -2,6 +2,8 @@ package me.raiko.cafecrud.Service;
 
 import me.raiko.cafecrud.Model.Category;
 import me.raiko.cafecrud.Repository.CategoryRepository;
+
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,15 +26,15 @@ public class CategoryService {
         return categoryRepository.findByName(name);
     }
 
-    public Optional<Category> findById(Long id) {
+    public Optional<Category> findById(@NonNull Long id) {
         return categoryRepository.findById(id);
     }
 
-    public Category save(Category category) {
+    public Category save(@NonNull Category category) {
         return categoryRepository.save(category);
     }
 
-    public void deleteCategory(Category category) {
+    public void deleteCategory(@NonNull Category category) {
         categoryRepository.delete(category);
     }
 }

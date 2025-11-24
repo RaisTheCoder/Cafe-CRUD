@@ -3,6 +3,7 @@ package me.raiko.cafecrud.Service;
 import me.raiko.cafecrud.Model.Cafe;
 import me.raiko.cafecrud.Repository.CafeRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,19 +21,15 @@ public class CafeService {
         return cafeRepository.findAll();
     }
 
-    public Optional<Cafe> findById(Long id) {
+    public Optional<Cafe> findById(@NonNull Long id) {
         return cafeRepository.findById(id);
     }
 
-    public List<Cafe> findAllCafe() {
-        return cafeRepository.findAll();
-    }
-
-    public Cafe save(Cafe cafe) {
+    public Cafe save(@NonNull Cafe cafe) {
         return cafeRepository.save(cafe);
     }
 
-    public void deleteCafe(Cafe cafe) {
+    public void deleteCafe(@NonNull Cafe cafe) {
         cafeRepository.delete(cafe);
     }
 }
